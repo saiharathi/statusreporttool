@@ -9,7 +9,7 @@ function setBindings(){
 		
 		 $("html body").animate({
 			 
-			scrollTop:$("#" +sectionID).offset()
+			scrollTop:$("#" +SectionID).offset()
           .top
 			 
 		 },1000)
