@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+       <meta charset="UTF-8">
+	   <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>harts</title>
+	   <link rel="stylesheet" href="style.css"/>
+	   
+	 
+	   
+	   <script>
+            
+            function addRow()
+            {
+                // get input values
+                var pinfo= document.getElementById('pinfo').value;
+                 var raccom = document.getElementById('raccom').value;
+                  var uac = document.getElementById('uac').value;
+				  var is = document.getElementById('is').value;
+                  var st = document.getElementById('st').value;
+                  
+                  // get the html table
+                  // 0 = the first table
+                  var table = document.getElementsByTagName('table')[0];
+                  
+                  // add new empty row to the table
+                  // 0 = in the top 
+                  // table.rows.length = the end
+                  // table.rows.length/2+1 = the center
+                  var newRow = table.insertRow(1);
+                  
+                  // add cells to the row
+                  var cel1 = newRow.insertCell(0);
+                  var cel2 = newRow.insertCell(1);
+                  var cel3 = newRow.insertCell(2);
+				  var cel4 = newRow.insertCell(3);
+                  var cel5 = newRow.insertCell(4);
+                  
+                  // add values to the cells
+                  cel1.innerHTML = pinfo;
+                  cel2.innerHTML = raccom;
+                  cel3.innerHTML = uac;
+				  cel4.innerHTML = is;
+                  cel5.innerHTML = st;
+            }
+			</script>
+			<script>
+            function ADDROW()
+            {
+                // get input values
+                var ow= document.getElementById('ow').value;
+                 var tw = document.getElementById('tw').value;
+                  var ua = document.getElementById('ua').value;
+				  var dd= document.getElementById('dd').value;
+                  var sa = document.getElementById('sa').value;
+				  var co = document.getElementById('co').value;
+                  
+                  // get the html table
+                  // 0 = the first table
+                  var table = document.getElementsByTagName('table')[0];
+                  
+                  // add new empty row to the table
+                  // 0 = in the top 
+                  // table.rows.length = the end
+                  // table.rows.length/2+1 = the center
+                  var newRow = table.insertRow(1);
+                  
+                  // add cells to the row
+                  var cel1 = newRow.insertCell(0);
+                  var cel2 = newRow.insertCell(1);
+                  var cel3 = newRow.insertCell(2);
+				  var cel4 = newRow.insertCell(3);
+                  var cel5 = newRow.insertCell(4);
+				  var cel6 = newRow.insertCell(5);
+                  
+                  // add values to the cells
+                  cel1.innerHTML = ow;
+                  cel2.innerHTML = tw;
+                  cel3.innerHTML = ua;
+				  cel4.innerHTML = dd;
+                  cel5.innerHTML = sa;
+				  cel5.innerHTML = co;
+            }
+        </script>
+        
+	   
+	   <style type="text/css">
+	   
+	   label{
+           float:left;   
+          width:150px;
+          text-align:right;
+		  padding-left:400px;
+
+	   }
+	   </style>
+</head>
+<body>	   
+<nav>
+<a id="home"   href="#homeSection" class="home" >HOME</a>
+<a id="team"   href="#teamSection" class="home">TEAM STATUS REPORT</a>
+<a id="person" href="#personSection" class="home">INDIVIDUAL STATUS REPORT</a>
+</nav>
+<div id="homeSection" class="sect sectOne">
+<!--<img src="dxc.png" onmouseover="this.src='SR.jpg'" onmouseout="this.src='dxc.png'" background-attachment=fixed>-->
+
+</div>
+<div id="teamSection"class="subSection">
+
+<div><br/><br/><br/>
+                   <h1>TEAM STATUS REPORT </h1>
+      </div>
+	  	  <div>
+         <label for="pinfo">  Project information:</label>
+		 <input type="text" name="pinfo" id="pinfo" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="raccom">Recent accomplishments:</label>
+		 <input type="text" name="raccom" id="raccom" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="uac">Upcoming activities :</label>
+		 <input type="text" name="uac" id="uac" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="is"> Issue :</label>
+		 <input type="text" name="is" id="is" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="st"> status :</label>
+		 <input type="text" name="st" id="st" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	  <!--  Project information:     <input type="text" name="pinfo" id="pinfo" /><br/><br/>
+        Recent accomplishments:  <input type="text" name="raccom" id="raccom" /><br/><br/>
+        Upcoming activities :    <input type="text" name="uac" id="uac" /><br/><br/>
+	    Issue :                  <input type="text" name="is" id="is" /><br/><br/>
+        status :                 <input type="text" name="st" id="st" /><br/><br/>-->
+	   
+        <button onclick="addRow();" class ="box" style="color:black;border-radius:10px;">Add Row</button><br/><br/>
+		<style>
+table, th, td {
+    border: 1px solid yellow;
+}
+</style>
+
+        <table border="1" style="width:100%">
+            
+            <tr>
+                <th>Project information</th>
+                <th>Recent accomplishments</th>
+                <th>Upcoming activities</th>
+				<th>Issue</th>
+                <th>status </th>
+            </tr>
+            
+            <tr>
+                <td>AAAAAA</td>
+                <td>BBBBBB</td>
+                <td>10</td>
+				<td>Last Name</td>
+                <td>Age</td>
+            </tr>
+            
+             <tr>
+                <td>CCC</td>
+                <td>DDDD</td>
+                <td>20</td>
+				<td>Last Name</td>
+                <td>Age</td>
+            </tr>
+            
+             
+             
+            
+             
+            
+        </table>
+</div>
+<div class="sect sectTwo"></div>
+<div id="personSection"class="subSection">
+
+
+<div><br/><br/><br/>
+<h2>INDIVIDUAL STATUS REPORT</h2>
+</div>
+<form  id="simpleform">
+	  <div>
+         <label for="ow">  Owner:</label>
+		 <input type="text" name="ow" id="ow" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   
+	  <div>
+         <label for="tw">This week activities:</label>
+		 <input type="text" name="tw" id="tw" size="100"/>	 
+       </div><br/>
+	   
+	  <div>
+         <label for="ua">  Upcoming activities:</label>
+		 <input type="text" name="ua" id="ua" maxlength="100" size="100"/>	 
+       </div><br/>
+	   
+	  <div>
+	  
+         <label for="dd"> Due date:</label>
+		 <input type="text" name="dd" id="dd" maxlength="100" size="100"/>
+       </div><br/>
+	   
+	  <div>
+         <label for="sa">  status:</label>
+		 <input type="text" name="sa" id="sa" maxlength="100" size="100"/>	 
+       </div><br/>
+	   <div>
+         <label for="co">  % Completion of task:</label>
+		 <input type="text" name="co" id="co" maxlength="100" size="100"/>	 
+       </div><br/>
+	   
+	   </form>
+      
+	             <!--<div class="inputdata">
+				Owner                   :<input type="text" name="ow" id="ow" /><br/><br/> 	  
+                This week activities    :<input type="text" name="tw" id="tw"  align="center"/><br/><br/> 
+                Upcoming activities     :<input type="text" name="ua" id="ua"  align="center"/><br/><br/> 
+                Due date                :<input type="text" name="dd" id="dd"  align="center"/><br/><br/>
+                Status                  :<input type="text" name="sa" id="sa"  align="center"/><br/><br/> 
+	            % Completion of task    :<input type="text" name="co" id="co"  align="center"/><br/><br/>
+				<div>-->
+			   
+<button onclick="ADDROW();" class ="box" style="color:black;border-radius:10px;">Add Row</button><br/><br/>	  
+	<table style="width:100%">
+	 
+	   
+	   
+	 <tr>
+	    <th>Owner</th>
+		<th>This week activities</th>
+		<th>Upcoming activities</th>
+		<th>Due date</th>
+		<th> Status</th>
+		<th> % Completion of task</th>
+	 </tr>
+	 <tr>
+	    <td>vvvfv</td>
+		<td>vfsvsv</td>
+		<td>vfsvs</td>
+		<td>vsvsv</td>
+		<td>vdsvds</td>
+		<td>vdsvds</td>
+	 </tr>
+	 <tr>
+	    <td>vvvfv</td>
+		<td>vfsvsv</td>
+		<td>vfsvs</td>
+		<td>vsvsv</td>
+		<td>vdsvds</td>
+		<td>vdsvds</td>
+	 </tr>
+	 
+	 
+	
+	
+	
+	
+	
+	
+	
+      </table>
+	
+
+
+
+
+</div>
+<div  class="sect sectThree"></div>
+
+
+<!-- adding table to team status report>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="app.js"></script>
+</body>
+
+</html>

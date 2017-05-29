@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	
+	 <title>ADD row</title>
+	 <meta charset="windows-1252">
+	 <meta name="viewport" content="width=device-width,intial-scale=1.0">
+	<script>
+	 
+	function addRow()
+	{
+	 var fname= document.getElementById('fname').value;
+	 var lname= document.getElementById('lname').value;
+	 var age= document.getElementById('age').value;
+	 
+	 var table= document.getElementsByTagName('table')[0];
+	 var newRow = table.insertRow(table.rows.length/2+1);
+	 
+	  var cel1 = newRow.insertcel1(0);
+	  var cel2= newRow.insertcel1(1);
+	  var cel3= newRow.insertcel1(2);
+	  
+	  cel1.innerHTML= fname;
+	  cel2.innerHTML= lname;
+	  cel3.innerHTML=  age;
+	  
+	  
+	  
+	 
+	
+	}
+	
+	
+	</script>
+	
+	
+	</head>
+ <body>
+ 
+        First name:<input type="text" name="fname" id="fname"/><br/><br/>
+		Last name:<input type="text" name="lname" id="lname"/><br/><br/>
+		Age:<input type="text" name="age" id="age"/><br/><br/>
+		<button onclick="addRow();">ADD Row</button>
+		
+ 
+ 
+      <table border="1">
+	           <tr>
+			        <th>First name</th>
+					<th>Last name</th>
+					<th>Age</th>
+			    </tr>
+	   
+	  <tr>
+	  <td>harathi</td>
+	  <td>budigi</td>
+	  <td>21</td>
+	  </tr>
+	  
+	  <tr>
+	  <td>raja</td>
+	  <td>budigi</td>
+	  <td>17</td>
+	  </tr>
+	  <tr>
+	  <td>anasurya</td>
+	  <td>budigi</td>
+	  <td>45</td>
+	  </tr>
+	  
+	  
+	  
+	  </table>
+ 
+ 
+ 
+ </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
