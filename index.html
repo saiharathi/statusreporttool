@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+       <meta charset="UTF-8">
+	   <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>harts</title>
+	   <link rel="stylesheet" href="style.css"/>
+	   
+	 
+	  
+           <script>
+            
+            function addRow()
+            {
+                // get input values
+                var pinfo= document.getElementById('pinfo').value;
+                 var raccom = document.getElementById('raccom').value;
+                  var uac = document.getElementById('uac').value;
+				  var is = document.getElementById('is').value;
+                  var st = document.getElementById('st').value;
+                  
+                  // get the html table
+                  // 0 = the first table
+                  var table = document.getElementsByTagName('table')[0];
+                  
+                  // add new empty row to the table
+                  // 0 = in the top 
+                  // table.rows.length = the end
+                  // table.rows.length/2+1 = the center
+                  var newRow = table.insertRow(1);
+                  
+                  // add cells to the row
+                  var cel1 = newRow.insertCell(0);
+                  var cel2 = newRow.insertCell(1);
+                  var cel3 = newRow.insertCell(2);
+				  var cel4 = newRow.insertCell(3);
+                  var cel5 = newRow.insertCell(4);
+                  
+                  // add values to the cells
+                  cel1.innerHTML = pinfo;
+                  cel2.innerHTML = raccom;
+                  cel3.innerHTML = uac;
+				  cel4.innerHTML = is;
+                  cel5.innerHTML = st;
+            }
+	
+          
+        </script>
+         
+            
+          
+            
+
+	   
+	   <style type="text/css">
+	   
+	   label{
+           float:left;   
+          width:150px;
+          text-align:right;
+		  padding-left:400px;
+
+	   }
+	   </style>
+	   <style>
+            
+            .container{overflow: hidden}
+            
+            
+            tr{transition:all .25s ease-in-out}
+            tr:hover{background-color:pink;cursor: pointer}
+			
+            
+        </style>
+		
+</head>
+<body>	   
+<nav>
+<a id="home"   href="#homeSection" class="home" >HOME</a>
+<a id="team"   href="#teamSection" class="home">TEAM STATUS REPORT</a>
+<a id="person" href="#personSection" class="home">INDIVIDUAL STATUS REPORT</a>
+</nav>
+<div id="homeSection" class="sect sectOne">
+<!--<img src="dxc.png" onmouseover="this.src='SR.jpg'" onmouseout="this.src='dxc.png'" background-attachment=fixed>-->
+
+</div>
+<div id="teamSection"class="subSection">
+
+<div><br/><br/><br/>
+                   <h1>TEAM STATUS REPORT </h1>
+      </div>
+	  <style>
+table, th, td {
+    border: 1px solid yellow;
+}
+
+</style>
+
+<!--<div class="container">
+            
+            <div class="tab tab-2">
+                
+		<label for="pinfo"> Project information :</label>
+		 <input type="text" name="pinfo" id="pinfo" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="raccom">Recent accomplishments:</label>
+		 <input type="text" name="raccom" id="raccom" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="uac">Upcoming activities :</label>
+		 <input type="text" name="uac" id="uac" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="is"> Issue:</label>
+		 <input type="text" name="is" id="is" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="st"> status :</label>
+		 <input type="text" name="st" id="st" align="center-right" maxlength="50" size="100"  />		 
+       </div><br/>
+	   
+                
+                <button onclick="addHtmlTableRow();"class ="box" style="color:black;border-radius:10px;">Add</button>
+                <button onclick="editHtmlTbleSelectedRow();"class ="box" style="color:black;border-radius:10px;">Edit</button>
+                <button onclick="removeSelectedRow();"class ="box" style="color:black;border-radius:10px;">Remove</button>
+            
+                <table  class ="tab tab-1" id="table" border="1" style="width:100%">
+                    <tr>
+                        <th>Project information</th>
+                        <th>Recent accomplishments</th>
+                        <th>Upcoming activities</th>
+						<th>Issue </th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>A1</td>
+                        <td>B1</td>
+                        <td>10</td>
+						<th>First Name</th>
+                        <th>Last Name</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>A3</td>
+                        <td>B3</td>
+                        <td>30</td>
+						<td>First Name</td>
+                        <td>Last Name</td>
+                       
+                    </tr>
+                    <tr>
+                        <td>A2</td>
+                        <td>B2</td>
+                        <td>20</td>
+						<td>First Name</td>
+                        <td>Last Name</td>
+                      
+                    </tr>
+                </table>
+            
+        </div>
+        </div>
+	
+        <script>
+            
+            var rIndex,
+                table = document.getElementById("table");
+            
+            // check the empty input
+            function checkEmptyInput()
+            {
+                var isEmpty = false,
+                    pinfo= document.getElementById("pinfo").value,
+                   raccom = document.getElementById("raccom").value,
+                    uac = document.getElementById("uac").value;
+					is = document.getElementById("is").value,
+                    st = document.getElementById("st").value,
+                    
+            
+                if(pinfo === ""){
+                    alert("First Name Connot Be Empty");
+                    isEmpty = true;
+                }
+                else if(raccom === ""){
+                    alert("Last Name Connot Be Empty");
+                    isEmpty = true;
+                }
+                else if(uac=== ""){
+                    alert("Age Connot Be Empty");
+                    isEmpty = true;
+                }
+				if(is === ""){
+                    alert("First Name Connot Be Empty");
+                    isEmpty = true;
+                }
+                else if(st === ""){
+                    alert("Last Name Connot Be Empty");
+                    isEmpty = true;
+                }
+                
+                return isEmpty;
+            }
+            
+            // add Row
+            function addHtmlTableRow()
+            {
+                // get the table by id
+                // create a new row and cells
+                // get value from input text
+                // set the values into row cell's
+                if(!checkEmptyInput()){
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+					cell4 = newRow.insertCell(3),
+                    cell5 = newRow.insertCell(4),
+                   
+                    pinfo= document.getElementById("pinfo").value,
+                    raccom= document.getElementById("raccom").value,
+                    uac= document.getElementById("uac").value;
+					is = document.getElementById("is").value,
+                    st = document.getElementById("st").value,
+                    
+            
+                cell1.innerHTML = pinfo;
+                cell2.innerHTML = raccom;
+                cell3.innerHTML = uac;
+				cell4.innerHTML = is;
+                cell5.innerHTML = st;
+               
+                // call the function to set the event to the new row
+                selectedRowToInput();
+            }
+            }
+            
+            // display selected row data into input text
+            function selectedRowToInput()
+            {
+                
+                for(var i = 1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+                      // get the seected row index
+                      rIndex = this.rowIndex;
+                      document.getElementById("pinfo").value = this.cells[0].innerHTML;
+                      document.getElementById("raccom").value = this.cells[1].innerHTML;
+                      document.getElementById("uac").value = this.cells[2].innerHTML;
+                      document.getElementById("is").value = this.cells[3].innerHTML;
+                      document.getElementById("st").value = this.cells[4].innerHTML;
+                     
+                    };
+                }
+            }
+            selectedRowToInput();
+            
+            function editHtmlTbleSelectedRow()
+            {
+                
+			        var  pinfo=  document.getElementById("pinfo").value,
+                         raccom=document.getElementById("raccom").value, 
+                         uac= document.getElementById("uac").value, 
+                         is=document.getElementById("is").value, 
+                         st=document.getElementById("st").value; 
+                      
+               if(!checkEmptyInput()){
+                table.rows[rIndex].cells[0].innerHTML = pinfo;
+                table.rows[rIndex].cells[1].innerHTML = raccom;
+                table.rows[rIndex].cells[2].innerHTML = uac;
+				table.rows[rIndex].cells[3].innerHTML = is;
+                table.rows[rIndex].cells[4].innerHTML = st;
+              
+              }
+            }
+            
+            function removeSelectedRow()
+            {
+                table.deleteRow(rIndex);
+                // clear input text
+                document.getElementById("pinfo").value = "";
+                document.getElementById("raccom").value = "";
+                document.getElementById("uac").value = "";
+				document.getElementById("is").value = "";
+                document.getElementById("st").value = "";
+               
+            }
+        </script>-->
+        
+
+
+
+
+
+
+	  	 <div>
+         <label for="pinfo">  Project information:</label>
+		 <input type="text" name="pinfo" id="pinfo" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="raccom">Recent accomplishments:</label>
+		 <input type="text" name="raccom" id="raccom" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="uac">Upcoming activities :</label>
+		 <input type="text" name="uac" id="uac" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="is"> Issue :</label>
+		 <input type="text" name="is" id="is" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="st"> status :</label>
+		 <input type="text" name="st" id="st" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	  
+	   
+        <button onclick="addRow();" class ="box" style="color:black;border-radius:10px;">Add Row</button><br/><br/>
+		
+		        
+		
+	
+
+        <table class ="tab tab-1" id="tab" border="1" style="width:100%">
+            
+            <tr>
+                <th>Project information</th>
+                <th>Recent accomplishments</th>
+                <th>Upcoming activities</th>
+				<th>Issue</th>
+                <th>status </th>
+            </tr>
+            
+            <tr>
+                <td>AAAAAA</td>
+                <td>BBBBBB</td>
+                <td>10</td>
+				<td>Last Name</td>
+                <td>Age</td>
+            </tr>
+            
+             <tr>
+                <td>CCC</td>
+                <td>DDDD</td>
+                <td>20</td>
+				<td>Last Name</td>
+                <td>Age</td>
+            </tr>
+            
+             
+             
+            
+             
+            
+        </table>
+</div>
+<div class="sect sectTwo"></div>
+
+<div id="personSection" class="subSection">
+
+
+<div><br/><br/><br/>
+<h2>INDIVIDUAL STATUS REPORT</h2>
+</div>
+<div class="container">
+            
+            <div class="tab tab-2">
+                
+		<label for="ow"> Owner :</label>
+		 <input type="text" name="ow" id="ow" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="tw">This week activities:</label>
+		 <input type="text" name="tw" id="tw" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="ua">Upcoming activities :</label>
+		 <input type="text" name="ua" id="ua" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="dd"> Due date:</label>
+		 <input type="text" name="dd" id="dd" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+	   <div>
+         <label for="sa"> status :</label>
+		 <input type="text" name="sa" id="sa" align="center-right" maxlength="50" size="100"  />		 
+       </div><br/>
+	   <div>
+         <label for="co"> % Completion of task:</label>
+		 <input type="text" name="co" id="co" align="center-right" maxlength="50" size="100"  />	 
+       </div><br/>
+                
+                <button onclick="addHtmlTableRow();"class ="box" style="color:black;border-radius:10px;">Add</button>
+                <button onclick="editHtmlTbleSelectedRow();"class ="box" style="color:black;border-radius:10px;">Edit</button>
+                <button onclick="removeSelectedRow();"class ="box" style="color:black;border-radius:10px;">Remove</button>
+            
+                <table  class ="tab tab-1" id="table" border="1" style="width:100%">
+                    <tr>
+                        <th>Owner</th>
+                        <th>This week activities</th>
+                        <th>Upcoming activities</th>
+						<th>Due date</th>
+                        <th>Status</th>
+                        <th>% Completion of task</th>
+                    </tr>
+                    <tr>
+                        <td>A1</td>
+                        <td>B1</td>
+                        <td>10</td>
+						<th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                    </tr>
+                    <tr>
+                        <td>A3</td>
+                        <td>B3</td>
+                        <td>30</td>
+						<th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                    </tr>
+                    <tr>
+                        <td>A2</td>
+                        <td>B2</td>
+                        <td>20</td>
+						<th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                    </tr>
+                </table>
+            
+        </div>
+        </div>
+	
+        <script>
+            
+            var rIndex,
+                table = document.getElementById("table");
+            
+            // check the empty input
+            function checkEmptyInput()
+            {
+                var isEmpty = false,
+                    ow = document.getElementById("ow").value,
+                    tw = document.getElementById("tw").value,
+                    ua = document.getElementById("ua").value;
+					dd = document.getElementById("dd").value,
+                    sa = document.getElementById("sa").value,
+                    co = document.getElementById("co").value;
+            
+                if(ow === ""){
+                    alert("Owner Connot Be Empty");
+                    isEmpty = true;
+                }
+                else if(tw === ""){
+                    alert("This week activities Connot Be Empty");
+                    isEmpty = true;
+                }
+                else if(ua=== ""){
+                    alert("Upcoming activitiesConnot Be Empty");
+                    isEmpty = true;
+                }
+				if(dd === ""){
+                    alert("Due date Connot Be Empty");
+                    isEmpty = true;
+                }
+                else if(sa === ""){
+                    alert("status Connot Be Empty");
+                    isEmpty = true;
+                }
+                else if(co=== ""){
+                    alert(" completion of the work Connot Be Empty");
+                    isEmpty = true;
+                }
+                return isEmpty;
+            }
+            
+            // add Row
+            function addHtmlTableRow()
+            {
+                // get the table by id
+                // create a new row and cells
+                // get value from input text
+                // set the values into row cell's
+                if(!checkEmptyInput()){
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+					cell4 = newRow.insertCell(3),
+                    cell5 = newRow.insertCell(4),
+                    cell6 = newRow.insertCell(5),
+                    ow= document.getElementById("ow").value,
+                    tw= document.getElementById("tw").value,
+                    ua = document.getElementById("ua").value;
+					dd = document.getElementById("dd").value,
+                    sa = document.getElementById("sa").value,
+                    co = document.getElementById("co").value;
+            
+                cell1.innerHTML = ow;
+                cell2.innerHTML = tw;
+                cell3.innerHTML = ua;
+				cell4.innerHTML = dd;
+                cell5.innerHTML = sa;
+                cell6.innerHTML = co;
+                // call the function to set the event to the new row
+                selectedRowToInput();
+            }
+            }
+            
+            // display selected row data into input text
+            function selectedRowToInput()
+            {
+                
+                for(var i = 1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+                      // get the seected row index
+                      rIndex = this.rowIndex;
+                      document.getElementById("ow").value = this.cells[0].innerHTML;
+                      document.getElementById("tw").value = this.cells[1].innerHTML;
+                      document.getElementById("ua").value = this.cells[2].innerHTML;
+                      document.getElementById("dd").value = this.cells[3].innerHTML;
+                      document.getElementById("sa").value = this.cells[4].innerHTML;
+                      document.getElementById("co").value = this.cells[5].innerHTML;
+                    };
+                }
+            }
+            selectedRowToInput();
+            
+            function editHtmlTbleSelectedRow()
+            {
+                
+			        var  ow=  document.getElementById("ow").value,
+                       tw=document.getElementById("tw").value, 
+                      ua= document.getElementById("ua").value, 
+                       dd=document.getElementById("dd").value, 
+                      sa=document.getElementById("sa").value, 
+                      co=document.getElementById("co").value;
+               if(!checkEmptyInput()){
+                table.rows[rIndex].cells[0].innerHTML = ow;
+                table.rows[rIndex].cells[1].innerHTML = tw;
+                table.rows[rIndex].cells[2].innerHTML = ua;
+				table.rows[rIndex].cells[3].innerHTML = dd;
+                table.rows[rIndex].cells[4].innerHTML = sa;
+                table.rows[rIndex].cells[5].innerHTML = co;
+              }
+            }
+            
+            function removeSelectedRow()
+            {
+                table.deleteRow(rIndex);
+                // clear input text
+                document.getElementById("ow").value = "";
+                document.getElementById("tw").value = "";
+                document.getElementById("ua").value = "";
+				document.getElementById("dd").value = "";
+                document.getElementById("sa").value = "";
+                document.getElementById("co").value = "";
+            }
+        </script>
+        
+
+
+
+
+
+</div>
+<div  class="sect sectThree"></div>
+
+
+<!-- adding table to team status report>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="app.js"></script>
+</body>
+
+</html>
